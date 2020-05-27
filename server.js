@@ -12,7 +12,7 @@ const App = require('./src/App.svelte').default
      name: 'letconst'
  })
 
-app.use('/static', express.static('./public'))
+app.use('/static', express.static(path.resolve(__dirname, 'public')))
 
 app.get('/', (req, res) => {
     const indexFileContent = fs.readFileSync(path.resolve(__dirname, 'public', 'index.html'))
